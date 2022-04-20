@@ -5,3 +5,20 @@
 .font-fred {
     font-family: 'Fredoka', sans-serif;
 }
+
+.btn-active {
+    background-color: gold;
+    color: black;
+}
+
+.btn-primary {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: rgb(239, 239, 239);
+    border-color: rgb(239, 239, 239);
+    color: black;
+}
