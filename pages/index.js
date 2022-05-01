@@ -110,7 +110,7 @@ const Home = () => {
             return (
                 <div
                     key={index}
-                    class='card lg:card-side bg-base-100 shadow-xl w-11/12 xl:w-3/5 my-4'
+                    className='card lg:card-side bg-base-100 shadow-xl w-11/12 xl:w-3/5 my-4'
                 >
                     <figure className='px-10'>
                         <Image
@@ -120,18 +120,30 @@ const Home = () => {
                             width={200}
                         />
                     </figure>
-                    <div class='card-body text-left text-black p-10'>
+                    <div className='card-body text-left text-black p-10'>
                         <h2 className='card-title text-4xl'>
                             {item.Manufacturer} {item.Model}
                         </h2>
-                        <div className='text-2xl'>
-                            Horsepower: {item.Horsepower}
-                        </div>
-                        <div className='text-2xl'>
+                        <div
+                            className={`${
+                                selected === 1 ? "text-red-500" : ""
+                            } text-2xl`}
+                        >
                             Fuel Efficiency: {item.Fuel_efficiency}
                         </div>
-                        <div class='card-actions justify-end'>
-                            <div class='btn px-6 rounded-lg text-3xl'>
+                        <div
+                            className={`${
+                                selected === 2 ? "text-red-500" : ""
+                            } text-2xl`}
+                        >
+                            Horsepower: {item.Horsepower}
+                        </div>
+                        <div className='card-actions justify-end'>
+                            <div
+                                className={`${
+                                    selected === 3 ? "text-red-400" : ""
+                                } btn px-6 rounded-lg text-3xl`}
+                            >
                                 $
                                 {item.Price_in_thousands.toLocaleString(
                                     "en-US"
@@ -236,7 +248,7 @@ const Home = () => {
                                         type='radio'
                                         name='options'
                                         data-title='Fuel Efficiency'
-                                        class='btn w-44'
+                                        className='btn w-44'
                                         onClick={() => {
                                             countSort(fuelArray);
                                             setSelected(1);
@@ -246,7 +258,7 @@ const Home = () => {
                                         type='radio'
                                         name='options'
                                         data-title='Horsepower'
-                                        class='btn w-44'
+                                        className='btn w-44'
                                         onClick={() => {
                                             countSort(HorsepowerArray);
                                             setSelected(2);
@@ -257,7 +269,7 @@ const Home = () => {
                                         type='radio'
                                         name='options'
                                         data-title='Price'
-                                        class='btn w-44'
+                                        className='btn w-44'
                                         onClick={() => {
                                             countSort(PriceArray);
                                             setSelected(3);
@@ -270,7 +282,7 @@ const Home = () => {
                                       return (
                                           <div
                                               key={index}
-                                              class='card lg:card-side bg-base-100 shadow-xl w-11/12 xl:w-3/5 my-4'
+                                              className='card lg:card-side bg-base-100 shadow-xl w-11/12 xl:w-3/5 my-4'
                                           >
                                               <figure className='px-10'>
                                                   <Image
@@ -286,12 +298,12 @@ const Home = () => {
                                                       {item.Model}
                                                   </h2>
                                                   <div className='text-2xl'>
-                                                      Horsepower:{" "}
-                                                      {item.Horsepower}
-                                                  </div>
-                                                  <div className='text-2xl'>
                                                       Fuel Efficiency:{" "}
                                                       {item.Fuel_efficiency}
+                                                  </div>
+                                                  <div className={"text-2xl"}>
+                                                      Horsepower:{" "}
+                                                      {item.Horsepower}
                                                   </div>
                                                   <div class='card-actions justify-end'>
                                                       <div class='btn px-6 rounded-lg text-3xl'>
@@ -316,10 +328,10 @@ const Home = () => {
                 <div className='text-white'>
                     <div className='flex flex-col items-center justify-center font-fred h-screen text-center bg-gradient-to-r from-cyan-400 to-blue-600'>
                         <h1 className='text-5xl font-semibold w-3/4'>
-                            Sorting cars
+                            Sorting Cars
                         </h1>
                         <h3 className='text-3xl'>
-                            Data sorting with count sort algorithm
+                            Data sorting with counting sort algorithm
                         </h3>
                         <button
                             className='btn btn-primary px-12 py-2 mt-10 rounded-lg'
